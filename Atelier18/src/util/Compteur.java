@@ -7,8 +7,15 @@ public class Compteur {
 
 	public Compteur() {
 		Compteur.nbcounter++;
+		this.init();
 	}
 
+	@Override
+	protected void finalize() throws Throwable {
+		Compteur.nbcounter--;
+		super.finalize();
+	}
+	
 	public Compteur(int value) {
 		this();
 		this.init(value);
