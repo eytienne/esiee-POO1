@@ -43,8 +43,10 @@ public class Compteur {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (super.equals(obj))
 			return true;
+		if(obj == null)
+			return false;
 		if (this.getClass() != obj.getClass())
 			return false;
 		Compteur c = (Compteur) obj;
